@@ -112,7 +112,7 @@ const Products = ({ products, addToCart }) => {
                     : "bg-linear-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white shadow-md"
                 }`}
               >
-                {isPurchased ? "✓ Purchased" : "Buy Now"}
+                {isPurchased ? "Added to Cart" : "Buy Now"}
               </button>
             </div>
           );
