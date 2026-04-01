@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "name": "Resume Builder Pro",
+    "description": "Create ATS-friendly resumes in minutes with AI assistance",
+    "price": 12,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "badge-primary",
+    "features": ["100+ Templates", "ATS Optimization", "AI Writer", "PDF & Word Export"],
+    "icon": "📄"
+  },
+  {
+    "id": 2,
+    "name": "AI Cover Letter Generator",
+    "description": "Generate personalized cover letters that get interviews",
+    "price": 8,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "badge-success",
+    "features": ["AI Powered", "Job-specific", "Editable Templates", "Instant Download"],
+    "icon": "✉️"
+  },
+  {
+    "id": 3,
+    "name": "Portfolio Builder",
+    "description": "Build stunning professional portfolios with custom domains",
+    "price": 25,
+    "period": "yearly",
+    "tag": "Best Seller",
+    "tagType": "badge-warning",
+    "features": ["Custom Domain", "SEO Ready", "Mobile Responsive", "Analytics"],
+    "icon": "🌐"
+  },
+  {
+    "id": 4,
+    "name": "LinkedIn Profile Optimizer",
+    "description": "Get more profile views and opportunities with AI",
+    "price": 15,
+    "period": "monthly",
+    "tag": "Trending",
+    "tagType": "badge-info",
+    "features": ["AI Suggestions", "Keyword Optimization", "Profile Score", "Weekly Reports"],
+    "icon": "💼"
+  },
+  {
+    "id": 5,
+    "name": "AI Content Writer",
+    "description": "Write blog posts, emails, and social media content instantly",
+    "price": 19,
+    "period": "monthly",
+    "tag": "Popular",
+    "tagType": "badge-primary",
+    "features": ["50+ Writing Styles", "Plagiarism Free", "SEO Optimized", "Unlimited Words"],
+    "icon": "✍️"
+  },
+  {
+    "id": 6,
+    "name": "Invoice & Billing Pro",
+    "description": "Professional invoicing and payment tracking tool",
+    "price": 10,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "badge-success",
+    "features": ["Beautiful Templates", "Auto Reminders", "Payment Integration", "Tax Reports"],
+    "icon": "💰"
+  }
+
+]

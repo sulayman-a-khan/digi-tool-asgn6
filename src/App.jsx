@@ -1,122 +1,101 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Banner from "./components/Banner";
+import Stats from "./components/Stats";
+import Products from "./components/Products";
+import Steps from "./components/Steps";
+import Pricing from "./components/Pricing";
+import Cart from "./components/Cart";
+import Footer from "./components/Footer";
+
+import data from "./data/products.json";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
+  };
+
+  const removeItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
+
+  const checkout = () => {
+    setCart([]);
+  };
 
   return (
     <>
-      <section id="center">
-        <h1 className='text-red-500 text-5xl font-b'>Vite + React</h1>
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <Navbar cartCount={cart.length} />
 
-      <div className="ticks"></div>
+      <Banner />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <Stats />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      {/* Toggle Buttons */}
+    {/* Premium Digital Tools Toggle Section - Light & Clean */}
+<div className="bg-white py-16">
+  <div className="max-w-5xl mx-auto px-6 text-center">
+    
+    <h2 className="text-5xl font-bold mb-6 tracking-tight text-gray-900">
+      Premium Digital Tools
+    </h2>
+    
+    <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+      Choose from our curated collection of premium digital products designed 
+      to boost your productivity and creativity.
+    </p>
+
+    {/* Pill Toggle Button - Light Style */}
+    <div className="inline-flex bg-gray-100 p-2 rounded-full shadow-inner">
+      
+      <button
+        onClick={() => setShowCart(false)}
+        className={`px-12 py-4 text-lg font-semibold rounded-full transition-all ${
+          !showCart 
+            ? "bg-violet-600 text-white shadow-md" 
+            : "text-gray-700 hover:bg-gray-200"
+        }`}
+      >
+        Products
+      </button>
+      
+      <button
+        onClick={() => setShowCart(true)}
+        className={`px-12 py-4 text-lg font-semibold rounded-full transition-all ${
+          showCart 
+            ? "bg-violet-600 text-white shadow-md" 
+            : "text-gray-700 hover:bg-gray-200"
+        }`}
+      >
+        Cart ({cart.length})
+      </button>
+    </div>
+
+  </div>
+</div>
+
+      {showCart ? (
+        <Cart cart={cart} removeItem={removeItem} checkout={checkout} />
+      ) : (
+        <Products products={data} addToCart={addToCart} />
+      )}
+
+      {!showCart && (
+        <>
+          <Steps />
+          <Pricing />
+        </>
+      )}
+
+      <Footer />
+      <ToastContainer position="top-center" autoClose={2000} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
