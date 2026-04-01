@@ -15,9 +15,9 @@
 
 <br>
 
-### 🎨 Beautiful AI Tools Shopping Experience
+### 🎨 Description
 
-**DigiTool** is a sleek and modern AI Tools Marketplace where users can easily browse, add powerful AI tools to their cart, and enjoy a smooth checkout experience.
+**DigiTool** is a modern AI Tools Marketplace where users can easily browse, add powerful AI tools to their cart, and enjoy a smooth checkout experience.
 
 Built with **React + Vite + Tailwind CSS**, it offers a clean, colorful, and fully responsive user interface.
 
@@ -25,11 +25,9 @@ Built with **React + Vite + Tailwind CSS**, it offers a clean, colorful, and ful
 
 ## ✨ Key Features
 
-- 🛒 **Smart Shopping Cart** with real-time total calculation
-- 🎨 **Stunning Modern UI** with hover effects and smooth transitions
-- 🛍️ **Add to Cart + Remove** with beautiful toast notifications
-- 📱 **Fully Responsive Design** – works perfectly on mobile & desktop
-- ⚡ **Fast Performance** powered by Vite
+- 🎨 **Stunning Modern UI** 
+- 🛍️ **Add to Cart + Remove** 
+- 📱 **Fully Responsive Design** 
 
 ---
 
@@ -40,20 +38,3 @@ Built with **React + Vite + Tailwind CSS**, it offers a clean, colorful, and ful
 - **React Toastify**
 - **JavaScript (ES6+)**
 - **Modern Flexbox & Grid**
-
----
-
-## 🚀 Quick Start
-
-```bash
-# Clone the project
-git clone https://github.com/yourusername/digi-tool.git
-
-# Go to project folder
-cd digi-tool
-
-# Install dependencies
-npm install
-
-# Run the app
-npm run dev
