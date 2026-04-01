@@ -1,17 +1,23 @@
 import { toast } from "react-toastify";
 
+// Correct relative imports from src/components/Cart.jsx
+import writingPro from "../assets/products/writing_2327400_1.png";
+import designTool from "../assets/products/design-tool.png";
+import portfolioImg from "../assets/products/portfolio.png";
+import operationImg from "../assets/products/operation.png";
+import socialMediaImg from "../assets/products/social-media.png";
+
 const Cart = ({ cart, removeItem, checkout }) => {
   // Calculate total directly
   const total = cart.reduce((sum, item) => sum + Number(item.price || 0), 0);
 
-  // Icon mapping (same as Products.jsx)
+  // Icon mapping using imported images
   const iconMap = {
-    1: "./src/assets/products/writing_2327400 1.png",   // AI Writing Pro
-    2: "./src/assets/products/design-tool.png",         // Design Templates Pack
-    3: "./src/assets/products/portfolio.png",
-    4: "./src/assets/products/operation.png",
-    5: "./src/assets/products/social-media.png",
-    // Add more mappings if needed
+    1: writingPro,   // AI Writing Pro
+    2: designTool,
+    3: portfolioImg,
+    4: operationImg,
+    5: socialMediaImg,
   };
 
   const handleRemove = (id, name) => {
@@ -59,7 +65,7 @@ const Cart = ({ cart, removeItem, checkout }) => {
                     key={item.id}
                     className="flex items-center gap-6 px-8 py-7 hover:bg-gray-50 transition-colors"
                   >
-                    {/* Icon - Same style as Products.jsx */}
+                    {/* Icon */}
                     <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center overflow-hidden border border-gray-100 shrink-0">
                       {iconSrc ? (
                         <img 
@@ -125,4 +131,4 @@ const Cart = ({ cart, removeItem, checkout }) => {
   );
 };
 
-export default Cart; 
+export default Cart;

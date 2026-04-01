@@ -2,7 +2,7 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 
 // Import all your product icons
-import aiWriting from "../assets/products/writing_2327400 1.png";
+import aiWriting from "../assets/products/writing_2327400_1.png";
 import designTool from "../assets/products/design-tool.png";
 import socialMedia from "../assets/products/social-media.png";
 import portfolio from "../assets/products/portfolio.png";
