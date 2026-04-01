@@ -6,11 +6,11 @@ const Cart = ({ cart, removeItem, checkout }) => {
 
   // Icon mapping (same as Products.jsx)
   const iconMap = {
-    1: "/src/assets/products/writing_2327400 1.png",   // AI Writing Pro
-    2: "/src/assets/products/design-tool.png",         // Design Templates Pack
-    3: "/src/assets/products/portfolio.png",
-    4: "/src/assets/products/operation.png",
-    5: "/src/assets/products/social-media.png",
+    1: "./src/assets/products/writing_2327400 1.png",   // AI Writing Pro
+    2: "./src/assets/products/design-tool.png",         // Design Templates Pack
+    3: "./src/assets/products/portfolio.png",
+    4: "./src/assets/products/operation.png",
+    5: "./src/assets/products/social-media.png",
     // Add more mappings if needed
   };
 
@@ -125,4 +125,4 @@ const Cart = ({ cart, removeItem, checkout }) => {
   );
 };
 
-export default Cart;
+export default Cart; 
