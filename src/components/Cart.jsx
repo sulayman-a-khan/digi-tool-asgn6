@@ -1,15 +1,35 @@
+import { toast } from "react-toastify";
+
 const Cart = ({ cart, removeItem, checkout }) => {
   // Calculate total directly
   const total = cart.reduce((sum, item) => sum + Number(item.price || 0), 0);
 
-  // Icon mapping - Same as Products.jsx
+  // Icon mapping (same as Products.jsx)
   const iconMap = {
     1: "/src/assets/products/writing_2327400 1.png",   // AI Writing Pro
     2: "/src/assets/products/design-tool.png",         // Design Templates Pack
     3: "/src/assets/products/portfolio.png",
     4: "/src/assets/products/operation.png",
     5: "/src/assets/products/social-media.png",
-    // Add more if you have more products
+    // Add more mappings if needed
+  };
+
+  const handleRemove = (id, name) => {
+    removeItem(id);
+    toast.error(`${name} removed from cart`, {
+      position: "top-center",
+      autoClose: 2000,
+    });
+  };
+
+  const handleCheckout = () => {
+    if (cart.length === 0) return;
+    
+    checkout();
+    toast.success("Checkout successful! Thank you for your purchase.", {
+      position: "top-center",
+      autoClose: 3000,
+    });
   };
 
   return (
@@ -39,7 +59,7 @@ const Cart = ({ cart, removeItem, checkout }) => {
                     key={item.id}
                     className="flex items-center gap-6 px-8 py-7 hover:bg-gray-50 transition-colors"
                   >
-                    {/* Icon - Using same images as Products.jsx */}
+                    {/* Icon - Same style as Products.jsx */}
                     <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center overflow-hidden border border-gray-100 shrink-0">
                       {iconSrc ? (
                         <img 
@@ -69,7 +89,7 @@ const Cart = ({ cart, removeItem, checkout }) => {
 
                     {/* Remove Button */}
                     <button
-                      onClick={() => removeItem(item.id)}
+                      onClick={() => handleRemove(item.id, item.name)}
                       className="text-rose-500 hover:text-rose-600 font-medium text-sm transition-colors px-4 py-2"
                     >
                       Remove
@@ -80,7 +100,7 @@ const Cart = ({ cart, removeItem, checkout }) => {
             )}
           </div>
 
-          {/* Total & Checkout */}
+          {/* Total & Checkout Section */}
           {cart.length > 0 && (
             <div className="p-8 border-t border-gray-100 bg-gray-50">
               <div className="flex justify-between items-center mb-8">
@@ -91,7 +111,7 @@ const Cart = ({ cart, removeItem, checkout }) => {
               </div>
 
               <button
-                onClick={checkout}
+                onClick={handleCheckout}
                 className="w-full bg-violet-600 hover:bg-violet-700 active:bg-violet-800 
                            transition-all text-white font-semibold py-4 rounded-2xl text-lg shadow-md"
               >
