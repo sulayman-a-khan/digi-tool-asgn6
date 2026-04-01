@@ -38,7 +38,7 @@ const Banner = () => {
               <button 
                 className="btn btn-outline text-lg px-10 py-3 rounded-full border-2 border-violet-600 text-violet-600 hover:bg-violet-50"
               >
-                ▶ Watch Demo
+                ▷ Watch Demo
               </button>
             </div>
 
