@@ -40,7 +40,7 @@ const Cart = ({ cart, removeItem, checkout }) => {
                     className="flex items-center gap-6 px-8 py-7 hover:bg-gray-50 transition-colors"
                   >
                     {/* Icon - Using same images as Products.jsx */}
-                    <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center overflow-hidden border border-gray-100 flex-shrink-0">
+                    <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center overflow-hidden border border-gray-100 shrink-0">
                       {iconSrc ? (
                         <img 
                           src={iconSrc} 
